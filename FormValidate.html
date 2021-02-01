@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validate</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="required.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <a id="dangki" class="tab" href="#" onclick="onDangKi()">Đăng Ký</a>
+        <a id="dangnhap" class="tab" href="#" onclick="onDangNhap()">Đăng Nhập</a>
+        <!--Khung đăng kí-->
+        <div id="divDangKi" class="divForm">
+            <!-- Form đăng kí-->
+            <form name="frmDangKi" action="">
+                <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+                <hr>
+                <!-- div xuat thong bao khi nguoi dung nhap thong tin loi-->
+                <p id="pThongBao">
+                    <div id="thongBao">
+
+                    </p>
+                </div>
+                <!-- Kết thúc div xuất thông báo -->
+                <!-- Table đăng ký-->
+                <table>
+                    <tr>
+                        <td>Tên Đăng Nhập:</td>
+                        <td><input type="text" id="tenDangNhap" name="tenDangNhap" class="khungNhap"></td>
+                    </tr>
+                    <tr>
+                        <td>Mật Khẩu:</td>
+                        <td><input type="password" id="matKhau" name="matKhau" class="khungNhap"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" id="email" name="email" class="khungNhap"></td>
+                    </tr>
+                    <tr>
+                        <td>Nghề nghiệp:</td>
+                        <td><select name="" id="ngheNghiep" class="khungNhap">
+                                <option value="vuiLongChon">Vui Long Chọn</option>
+                                <option value="lapTrinhVien">Lập trình viên</option>
+                                <option value="giangVien">Giảng viên</option>
+                                <option value="tester">Tester</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính:</td>
+                        <td><input type="radio" id="nam" name="gioiTinh">Nam
+                            <input type="radio" id="nu" name="gioiTinh">Nu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: center;">
+                            <input type="submit" value="ĐĂNG KÍ" id="typeDangKi" onclick="return checkRegister()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <p> Bạn đã có tài khoản vui lòng<a href="#" style="text-decoration: none;"
+                                    onclick="onDangNhap()"> đăng nhập</a></p>
+                        </td>
+                    </tr>
+                    <!-- Hết table đăng ký-->
+                </table>
+                <!-- hết form đăng kí-->
+            </form>
+            <!-- Hết khung đăng kí-->
+        </div>
+
+        <!-- khung đăng nhập-->
+        <div id="divDangNhap" class="divForm">
+            <!-- form đăng nhập-->
+            <form name="frmDangNhap" action="">
+                <h2>ĐĂNG NHẬP</h2>
+                <hr>
+                <table>
+                    <tr>
+                        
+                        <td>Tên đăng nhập:</td>
+                        <td><input type="text" name="username" class="khungNhap"></td>
+                    </tr>
+                    <tr>
+                        <td>Mật Khẩu:</td>
+                        <td><input type="password" name="matKhau" class="khungNhap"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: center;">
+                            <input type="checkbox" id="quenMatKhau">Nhớ mật Khẩu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: center;">
+                            <a href="#">Quên mật Khẩu</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: center;">
+                            <input type="submit" value="ĐĂNG NHẬP" id="typeDangKi">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <p> Bạn CHƯA có tài khoản vui lòng<a href="#" style="text-decoration: none;"
+                                    onclick="onDangKi()"> ĐĂNG NHẬP</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+
+        <p id="thongbao"></p>
+        <p id="thongbao1"></p>
+    </div>
+</body>
+
+</html>

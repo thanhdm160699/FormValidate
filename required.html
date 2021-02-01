@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="thongbao"></p>
+    <p id="thongbao1"></p>
+    <form name="form1" action="">
+        Name: <input type="text" name="username"><br>
+        Address: <input type="text" name="Address"> <br>
+        <input type="submit" value="check Address" onclick="return checkAllCharacter()">
+        <button onclick="return required()">Check</button>
+    </form>
+
+
+    <script type="text/javascript">
+        function required() {
+            var inputTen = document.forms["form1"]["username"];
+            var giaTriTen = inputTen.value;
+            var theP = document.getElementById("thongbao");
+            if (giaTriTen == "") {
+                theP.style.display = "block";
+                theP.innerHTML = "Please input avalue";
+                theP.style.color = "red";
+                return false;
+            }
+            else {
+                theP.style.display = "none";
+                return true;
+            }
+        }
+
+
+
+        function checkAllCharacter() {
+            var checkAddress = document.forms["form1"]["Address"];
+            var letter = /^[A-Za-z]+$/;
+            var theP = document.getElementById("thongbao1");
+            if (checkAddress.value.match(letter)) {
+                theP.style.display = "none";
+                return true;
+            }
+            else {
+                theP.style.display = "block";
+                theP.style.color = "red";
+                theP.innerHTML = "Please input is character all";
+                return false;
+            }
+        }
+
+        function checkAllNumber() {
+            var checkPhoneNumber = document.forms["form1"]["phoneNumber"];
+            var letter = /^[0-9]+$/;
+            var theP = document.getElementById("thongbao2");
+            if (checkPhoneNumber.value.match(letter)) {
+                theP.style.display = "none";
+                return true;
+            }
+            else {
+                theP.style.display = "block";
+                theP.style.color = "red";
+                theP.innerHTML = "Please input is all number ";
+                return false;
+            }
+        }
+
+        function checkMail() {
+            var checkMail = document.forms["form1"]["email"];
+            var letter = /^([\w\.])+@([a-zA-Z0-9\-])+\.([a-zA-Z]{2,4})(\.[a-zA-Z]{2,4})?$/;
+            var theP = document.getElementById("thogbao3");
+            if (checkMail.value.match(letter)) {
+                theP.style.display = "none";
+                return true;
+            }
+            else {
+                theP.style.display = "block";
+                theP.style.color = "red";
+                theP.innerHTML = "Please input the correct email";
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
